@@ -1,19 +1,28 @@
+using System.Diagnostics;
 using System.IO;
 using System.Text;
+using TMPro;
 using UnityEngine;
 
 public class Question2: MonoBehaviour
 {
+    public TextMeshProUGUI output;
+
+    string data = "Hello Unity World!";
+    byte encryptKey = 0b01011100;
+
     private void Start()
     {
-        StringBuilder sbDebug = new StringBuilder();
+    }
 
-        string data = "Hello Unity World!";
-        byte encryptKey = 0b01011100;
-
-
-        sbDebug.AppendLine($"원본: {data}");
+    public void CreateFile()
+    {
         File.WriteAllText(Path.Combine(Application.persistentDataPath, "secret.txt"), data);
+        output.text = $"원본: {data} 생성 완료";
+    }
+
+    public void Encrypt()
+    {
         int encryptedByte = 0;
 
         using (FileStream writeStream = File.OpenWrite(Path.Combine(Application.persistentDataPath, "encrypted.dat")))
@@ -32,9 +41,11 @@ public class Question2: MonoBehaviour
             }
         }
 
-        sbDebug.AppendLine($"암호화 완료 (파일 크기: {encryptedByte} bytes)");
+        output.text = $"암호화 완료 (파일 크기: {encryptedByte} bytes)";
+    }
 
-
+    public void Decrypt()
+    {
 
         using (FileStream writeStream = File.OpenWrite(Path.Combine(Application.persistentDataPath, "decrypted.txt")))
         {
@@ -50,14 +61,9 @@ public class Question2: MonoBehaviour
                 }
             }
         }
-        sbDebug.AppendLine("복호화 완료");
 
 
         string decryptedData = File.ReadAllText(Path.Combine(Application.persistentDataPath, "decrypted.txt"));
-        sbDebug.AppendLine($"복호화 결과: {decryptedData}");
-
-        sbDebug.AppendLine($"원본과 일치: {data.Equals(decryptedData)}");
-
-        Debug.Log(sbDebug.ToString());
+        output.text = $"복호화 완료\n복호화 결과: {decryptedData}\n원본과 일치: {data.Equals(decryptedData)}";
     }
 }

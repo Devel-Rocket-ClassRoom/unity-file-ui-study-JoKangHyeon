@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TMPro;
 using UnityEngine;
 
 public class Question3 : MonoBehaviour
 {
     Dictionary<string, string> config;
+
+    public TextMeshProUGUI dataText;
 
     private void Start()
     {
@@ -18,23 +21,6 @@ public class Question3 : MonoBehaviour
         Load();
 
         sbDebug.AppendLine($"설정 로드 완료 (항목 {config.Count}개)");
-
-        
-        sbDebug.AppendLine("--- 변경 전 ---");
-        sbDebug.AppendLine($"bgm_volume = {config["bgm_volume"]}");
-        sbDebug.AppendLine($"language = {config["language"]}");
-
-        
-        config["bgm_volume"] = "50";
-        config["language"] = "en";
-        Save();
-        sbDebug.AppendLine("--- 변경 후 저장 ---");
-        sbDebug.AppendLine($"bgm_volume = {config["bgm_volume"]}");
-        sbDebug.AppendLine($"language = {config["language"]}");
-
-
-        sbDebug.AppendLine("--- 최종 파일 내용 ---");
-        sbDebug.AppendLine(File.ReadAllText(Path.Combine(Application.persistentDataPath, "settings.cfg")));
 
         Debug.Log(sbDebug.ToString());
     }
@@ -49,6 +35,27 @@ public class Question3 : MonoBehaviour
             { "language", "kr" },
             { "show_damage", "true" }
         };
+        Debug.Log("설정 복원 완료");
+    }
+
+    public void ChangeConfig()
+    {
+        config["bgm_volume"] = "50";
+        config["language"] = "en";
+        Debug.Log("설정 변경 완료");
+    }
+
+    public void SetUI()
+    {
+        try
+        {
+        dataText.text = File.ReadAllText(Path.Combine(Application.persistentDataPath, "settings.cfg"));
+
+        }
+        catch
+        {
+            dataText.text = "";
+        }
     }
 
     public void Save()
@@ -61,6 +68,7 @@ public class Question3 : MonoBehaviour
                 sw.WriteLine($"{kvp.Key}={kvp.Value}");
             }
         }
+        SetUI();
     }
 
     public void Load()
@@ -78,5 +86,6 @@ public class Question3 : MonoBehaviour
                 read = sr.ReadLine();
             }
         }
+        SetUI();
     }
 }
