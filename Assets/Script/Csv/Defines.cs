@@ -15,7 +15,31 @@ public class Defines
 
 public static class Variables
 {
-    public static Languages languages = Languages.Korean;
+    public static event Action OnLanguageChaged;
+    public static event Action OnLanguageResetRequested;
+
+    private static Languages _language = Languages.Korean;
+
+    public static Languages Language
+    {
+        get
+        {
+            return _language;
+        }
+        set
+        {
+            if (_language == value) return;
+
+            DataTableManager.SetStringTable(value);
+            _language = value;
+            OnLanguageChaged?.Invoke();
+        }
+    }
+
+    public static void ResetLanguages()
+    {
+        Variables.OnLanguageResetRequested?.Invoke();
+    }
 }
 
 public static class DataTableIds
@@ -26,7 +50,7 @@ public static class DataTableIds
         "StringTableEn",
         "StringTableJp",
     };
-    public static string String => StringTables[(int)Variables.languages];
+    public static string String => StringTables[(int)Variables.Language];
 }
 
 public static class DataTableManager
@@ -35,28 +59,51 @@ public static class DataTableManager
 
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
 
-    static DataTableManager() {
+    static DataTableManager()
+    {
         Init();
     }
 
     public static void Init()
     {
-        var stringTable = new StringTable();
-        stringTable.Load(DataTableIds.String);
-        tables.Add(DataTableIds.String, stringTable);
+
+#if UNITY_EDITOR
+        foreach (string language in DataTableIds.StringTables)
+        {
+            var stringTable = new StringTable();
+            stringTable.Load(language);
+            tables.Add(language, stringTable);
+        }
+#else
+        SetStringTable();
+#endif
     }
 
-    public static T Get<T> (string id) where T : DataTable
+#if UNITY_EDITOR
+    public static StringTable GetStringTable(Languages lang)
+    {
+        return Get<StringTable>(DataTableIds.StringTables[(int)lang]);
+    }
+#endif
+
+    public static T Get<T>(string id) where T : DataTable
     {
         //Debug.Log(id);
 
         if (!tables.ContainsKey(id))
         {
-            var stringTable = new StringTable();
-            stringTable.Load(id);
-            tables.Add(id, stringTable);
+            return null;
         }
 
         return tables[id] as T;
+    }
+
+    public static void SetStringTable(Languages to)
+    {
+        var stringTable = StringTable;
+        stringTable.Load(DataTableIds.StringTables[(int)to]);
+
+        tables.Clear();
+        tables.Add(DataTableIds.StringTables[(int)to], stringTable);
     }
 }

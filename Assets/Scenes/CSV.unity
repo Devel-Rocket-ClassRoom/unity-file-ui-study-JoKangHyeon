@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello1
+  m_text: "\uC548\uB1552"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70de05ec99cfdeb40b5d3b6f17c547eb, type: 2}
   m_sharedMaterial: {fileID: -7212890099577510305, guid: 70de05ec99cfdeb40b5d3b6f17c547eb, type: 2}
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   id: Hello
-  language: 1
+  editorLanguage: 2
   text: {fileID: 612574906}
 --- !u!1 &1067426599
 GameObject:
@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB108 \uC8FD\uC74C"
+  m_text: "\uB108 \uC8FD\uC74C2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70de05ec99cfdeb40b5d3b6f17c547eb, type: 2}
   m_sharedMaterial: {fileID: -7212890099577510305, guid: 70de05ec99cfdeb40b5d3b6f17c547eb, type: 2}
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   id: You Die
-  language: 0
+  editorLanguage: 2
   text: {fileID: 1837829128}
 --- !u!1 &2085699877
 GameObject:
