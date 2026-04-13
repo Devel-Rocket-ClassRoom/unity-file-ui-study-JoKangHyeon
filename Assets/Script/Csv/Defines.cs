@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using static Defines;
 
@@ -7,7 +7,7 @@ public class Defines
 {
     public enum Languages
     {
-        Korea,
+        Korean,
         English,
         Japanesse
     }
@@ -15,7 +15,7 @@ public class Defines
 
 public static class Variables
 {
-    public static Languages languages = Languages.Korea;
+    public static Languages languages = Languages.Korean;
 }
 
 public static class DataTableIds
@@ -48,7 +48,7 @@ public static class DataTableManager
 
     public static T Get<T> (string id) where T : DataTable
     {
-        Debug.Log(id);
+        //Debug.Log(id);
 
         if (!tables.ContainsKey(id))
         {

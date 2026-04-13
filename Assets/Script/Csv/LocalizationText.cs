@@ -34,6 +34,20 @@ public class LocalizationText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Variables.languages = Defines.Languages.Korean;
+            text.text = DataTableManager.StringTable.Get(id);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Variables.languages = Defines.Languages.English;
+            text.text = DataTableManager.StringTable.Get(id);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Variables.languages = Defines.Languages.Japanesse;
+            text.text = DataTableManager.StringTable.Get(id);
+        }
     }
 }
