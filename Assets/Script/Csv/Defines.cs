@@ -100,10 +100,12 @@ public static class DataTableManager
 
     public static void SetStringTable(Languages to)
     {
+#if !UNITY_EDITOR
         var stringTable = StringTable;
         stringTable.Load(DataTableIds.StringTables[(int)to]);
 
         tables.Clear();
         tables.Add(DataTableIds.StringTables[(int)to], stringTable);
+#endif
     }
 }
