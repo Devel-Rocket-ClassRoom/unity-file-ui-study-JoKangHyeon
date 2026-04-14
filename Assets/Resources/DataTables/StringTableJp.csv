@@ -1,4 +1,22 @@
-Id,String
-Hello,안녕2
-Bye,잘가2
-You Die,너 죽음2
+﻿Id,String
+HELLO,やあ
+BYE,じゃあな
+YOU DIE,あなたは死ぬ
+Item1Name,剣
+Item2Name,盾
+Item3Name,弓
+Item4Name,ポーション
+Item1Desc,これは剣だ。
+Item2Desc,これは盾だ。
+Item3Desc,これは弓だ。
+Item4Desc,これはポーションだ。
+Character1Name,これはWarrierだ。
+Character2Name,これはArcherだ。
+Character3Name,これはMageだ。
+Character4Name,これはThiefだ。
+Character5Name,N5
+CharacterDesc1,C1だ
+CharacterDesc2,C2だ
+CharacterDesc3,C3だ
+CharacterDesc4,C4だ
+CharacterDesc5,C5だ

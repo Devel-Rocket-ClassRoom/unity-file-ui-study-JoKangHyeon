@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using static Defines;
 
 public class Defines
@@ -10,6 +9,13 @@ public class Defines
         Korean,
         English,
         Japanesse
+    }
+
+    public enum ItemTypes
+    {
+        Weapon,
+        Equip,
+        Consumable
     }
 }
 
@@ -51,6 +57,9 @@ public static class DataTableIds
         "StringTableJp",
     };
     public static string String => StringTables[(int)Variables.Language];
+
+    public static readonly string Item = "ItemTable";
+    public static readonly string Character = "CharacterTable";
 }
 
 public static class DataTableManager
@@ -58,6 +67,8 @@ public static class DataTableManager
     private static readonly Dictionary<string, DataTable> tables = new();
 
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
+    public static ItemTable ItemTable => Get<ItemTable>(DataTableIds.Item);
+    public static CharacterTable CharacterTable => Get<CharacterTable>(DataTableIds.Character);
 
     static DataTableManager()
     {
@@ -77,6 +88,14 @@ public static class DataTableManager
 #else
         SetStringTable();
 #endif
+
+        var itemTable = new ItemTable();
+        itemTable.Load(DataTableIds.Item);
+        tables.Add(DataTableIds.Item, itemTable);
+
+        var characterTable = new CharacterTable();
+        characterTable.Load(DataTableIds.Character);
+        tables.Add(DataTableIds.Character, characterTable);
     }
 
 #if UNITY_EDITOR

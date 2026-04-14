@@ -1,4 +1,22 @@
 Id,String
-Hello,Hello1
-Bye,Bye1
-You Die,You Die1
+HELLO,Hello~
+BYE,Bye~
+YOU DIE,You Die...
+Item1Name,Sword
+Item2Name,Shield
+Item3Name,Bow
+Item4Name,Potion
+Item1Desc,This is a sword.
+Item2Desc,This is a shield.
+Item3Desc,This is a bow.
+Item4Desc,This is a potion.
+Character1Name,Warrier
+Character2Name,Archer
+Character3Name,Mage
+Character4Name,Thief
+Character5Name,Name5
+CharacterDesc1,Warrier Chracter
+CharacterDesc2,Archer Character
+CharacterDesc3,Mage Character
+CharacterDesc4,Thief Character
+CharacterDesc5,Character Desc 5

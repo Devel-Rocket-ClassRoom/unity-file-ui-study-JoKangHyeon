@@ -1,0 +1,6 @@
+Id,Name,Desc,Level,MaxHealth,Atk,Def,Icon
+Character1,Character1Name,CharacterDesc1,1,10,100,1000,Icon_Helmet01
+Character2,Character2Name,CharacterDesc2,2,20,200,2000,Icon_Bow02
+Character3,Character3Name,CharacterDesc3,3,30,300,3000,Icon_Fire01
+Character4,Character4Name,CharacterDesc4,4,40,400,4000,Icon_Gold
+Character5,Character5Name,CharacterDesc5,5,50,500,5000,Icon_Arrow_Down01

@@ -80,7 +80,7 @@ public class LocalizationText : MonoBehaviour
         text.text = stringTable.Get(id);
     }
 
-    private void OnChangeLanguage()
+    public void OnChangeLanguage()
     {
         text.text = DataTableManager.StringTable.Get(id);
     }
