@@ -17,6 +17,8 @@ public class Defines
         Equip,
         Consumable
     }
+
+    public const string c_characterStatusTextKey = "CharacterStatusFormat";
 }
 
 public static class Variables

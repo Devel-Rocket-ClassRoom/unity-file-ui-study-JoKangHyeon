@@ -22,6 +22,8 @@ public class CharacterViewer : MonoBehaviour
         set
         {
             _characterData = value;
+            OnLanguageChanged();
+
             if (_characterData == null)
             {
                 if (nameText != null)
@@ -39,11 +41,6 @@ public class CharacterViewer : MonoBehaviour
                 if (icon != null)
                 {
                     icon.sprite = null;
-                }
-
-                if(dataText != null)
-                {
-                    dataText.text = string.Empty;
                 }
 
                 return;
@@ -65,11 +62,6 @@ public class CharacterViewer : MonoBehaviour
             {
                 icon.sprite = _characterData.SpriteIcon;
             }
-
-            if(dataText!= null)
-            {
-                dataText.text = _characterData.ToString();
-            }
         }
     }
 
@@ -82,5 +74,23 @@ public class CharacterViewer : MonoBehaviour
     {
         if(!Application.isPlaying) 
             ItemData = DataTableManager.CharacterTable.Get(itemId);
+    }
+
+    private void OnEnable()
+    {
+        Variables.OnLanguageChaged += OnLanguageChanged;
+    }
+
+    private void OnDisable()
+    {
+        Variables.OnLanguageChaged -= OnLanguageChanged;
+    }
+
+    private void OnLanguageChanged()
+    {
+        if (dataText != null)
+        {
+            dataText.text = _characterData.ToLocalizedString();
+        }
     }
 }

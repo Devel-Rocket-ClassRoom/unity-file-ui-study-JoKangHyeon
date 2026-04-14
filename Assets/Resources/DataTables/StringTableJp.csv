@@ -2,6 +2,7 @@
 HELLO,やあ
 BYE,じゃあな
 YOU DIE,あなたは死ぬ
+CharacterStatusFormat,レベル：{0} ヘルス：{1}\n ディフェンス：{2} アタック：{3}
 Item1Name,剣
 Item2Name,盾
 Item3Name,弓

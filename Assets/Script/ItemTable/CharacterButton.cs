@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterButton : MonoBehaviour
 {
-    public ViewableViewer targetViewer;
+    public CharacterViewer targetViewer;
     public CharacterViewer buttonViewer;
 
     public void OnButtonClicked()

@@ -2,6 +2,7 @@ Id,String
 HELLO,Hello~
 BYE,Bye~
 YOU DIE,You Die...
+CharacterStatusFormat,Level:{0} Health: {1} \nDefence: {2} Attack: {3}
 Item1Name,Sword
 Item2Name,Shield
 Item3Name,Bow

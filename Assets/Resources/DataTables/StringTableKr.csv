@@ -2,6 +2,7 @@
 HELLO,안녕
 BYE,잘가
 YOU DIE,너 죽음
+CharacterStatusFormat,레벨:{0} 체력: {1}\n방어력: {2} 공격력: {3}
 Item1Name,검
 Item2Name,방패
 Item3Name,활 

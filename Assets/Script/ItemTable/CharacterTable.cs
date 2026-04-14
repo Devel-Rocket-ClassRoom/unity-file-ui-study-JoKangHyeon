@@ -13,6 +13,12 @@ public class CharacterData : ViewableData
     {
         return $"{Id} / {StringName} / {StringDesc} / {Level} / {MaxHealth} / {Atk} / {Def} / {Icon}";
     }
+
+    public string ToLocalizedString()
+    {
+        string formatString = DataTableManager.StringTable.Get(Defines.c_characterStatusTextKey);
+        return string.Format(formatString, Level, MaxHealth, Def, Atk);
+    }
 }
 
 public class CharacterTable : DataTable
