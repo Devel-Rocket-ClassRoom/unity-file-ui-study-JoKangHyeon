@@ -1,0 +1,24 @@
+using UnityEngine;
+
+public class CryptoTest1 : MonoBehaviour
+{
+    public byte[] encrypted;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            string plainText = "Hello AES!";
+            encrypted = CryptoUtil.Encrypt(plainText);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (encrypted != null)
+            {
+                string plainText = CryptoUtil.Decrypt(encrypted);
+                Debug.Log(plainText);   
+            }
+        }
+    }
+}

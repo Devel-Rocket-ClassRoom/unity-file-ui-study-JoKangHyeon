@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemTable : DataTable
 {
-    Dictionary<string, ItemData> table = new();
+    public Dictionary<string, ItemData> table = new();
 
     public override void Load(string fileName)
     {
