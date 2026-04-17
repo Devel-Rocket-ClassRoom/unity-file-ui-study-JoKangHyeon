@@ -42,5 +42,6 @@ public class StartWindow : GenericWindow
     public void OnOption()
     {
         Debug.Log("OnOption");
+        windowManager.Open(3);
     }
 }
