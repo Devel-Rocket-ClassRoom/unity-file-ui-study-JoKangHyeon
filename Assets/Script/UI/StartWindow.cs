@@ -30,6 +30,7 @@ public class StartWindow : GenericWindow
     public void OnContinue()
     {
         Debug.Log("OnContinue");
+        windowManager.Open(1);
     }
 
     public void OnNewGame()
