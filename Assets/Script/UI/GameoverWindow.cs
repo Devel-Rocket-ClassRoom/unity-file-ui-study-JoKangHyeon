@@ -25,6 +25,8 @@ public class GameoverWindow : GenericWindow
     int[] stats;
     int totalScore;
 
+    Coroutine showWindowCoroutine;
+
     private void Awake()
     {
         nextButton.onClick.AddListener(OnNext);
@@ -43,11 +45,21 @@ public class GameoverWindow : GenericWindow
 
         base.Open();
 
-        StartCoroutine(ShowOpenWindowAnimation());
+        if(showWindowCoroutine != null)
+        {
+            StopCoroutine(showWindowCoroutine);
+        }
+        showWindowCoroutine = StartCoroutine(ShowOpenWindowAnimation());
     }
 
     public override void Close()
     {
+        if (showWindowCoroutine != null)
+        {
+            StopCoroutine(showWindowCoroutine);
+            showWindowCoroutine = null;
+        }
+
         base.Close();
     }
 
@@ -97,11 +109,13 @@ public class GameoverWindow : GenericWindow
         while (timer < scoreShowTime)
         {
             timer += scoreShowTimeUnit;
-            int currentScoreShown = (int)Mathf.Lerp(0, totalScore, timer / scoreShowTime);
+            int currentScoreShown = Mathf.FloorToInt(Mathf.Lerp(0, totalScore, timer / scoreShowTime));
             totalScoreValue.text = currentScoreShown.ToString("D8");
             yield return scoreShowUnitWait;
         }
 
         totalScoreValue.text = totalScore.ToString("D8");
+
+        showWindowCoroutine = null;
     }
 }
