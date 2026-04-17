@@ -10,6 +10,8 @@ public class DifficultyWindow : GenericWindow
     public Button cancelButton;
     public Button applyButton;
 
+    const string c_DifficultyPrefKey = "difficulty";
+
     private void Awake()
     {
         toggles[0].onValueChanged.AddListener(OnEasy);
@@ -23,6 +25,8 @@ public class DifficultyWindow : GenericWindow
     public override void Open()
     {
         base.Open();
+
+        selected = PlayerPrefs.GetInt(c_DifficultyPrefKey, 0);
         toggles[selected].isOn = true;
     }
 
@@ -65,6 +69,7 @@ public class DifficultyWindow : GenericWindow
 
     public void OnApply()
     {
+        PlayerPrefs.SetInt(c_DifficultyPrefKey, selected);
         windowManager.Open(0);
     }
 }
