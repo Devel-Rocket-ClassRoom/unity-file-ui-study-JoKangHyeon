@@ -22,8 +22,7 @@ public class SaveLoadTest1 : MonoBehaviour
             sb.AppendLine("items : ");
             foreach (var item in SaveLoadManager.Data.items)
             {
-                var itemData = DataTableManager.ItemTable.Get(item);
-                sb.AppendLine($"    {item} : { DataTableManager.StringTable.Get(itemData.Name)}");
+                sb.AppendLine($"    {item.ItemData.Name} : { item.ItemData }");
             }
             Debug.Log( sb.ToString() );
         }
@@ -31,10 +30,12 @@ public class SaveLoadTest1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             int randomItem = Random.Range(0, DataTableManager.ItemTable.table.Count);
-            string itemId = DataTableManager.ItemTable.table.Keys.ToList()[randomItem];
-            SaveLoadManager.Data.items.Add(itemId);
+            var item = DataTableManager.ItemTable.table.Values.ToList()[randomItem];
+            var itemSaveData = new SaveItemData();
+            itemSaveData.ItemData = item;
+            SaveLoadManager.Data.items.Add(itemSaveData);
 
-            Debug.Log($"Added : {itemId}");
+            Debug.Log($"Added : {itemSaveData.ItemData}");
         }
     }
 }

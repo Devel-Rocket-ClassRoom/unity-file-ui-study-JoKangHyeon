@@ -1,4 +1,6 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemTable : DataTable
@@ -43,8 +45,11 @@ public class ViewableData
     public string Desc { get; set; }
     public string Icon { get; set; }
 
+    [JsonIgnore]
     public string StringName => DataTableManager.StringTable.Get(Name);
+    [JsonIgnore]
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
+    [JsonIgnore]
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 }
 

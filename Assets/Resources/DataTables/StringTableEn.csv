@@ -21,3 +21,41 @@ CharacterDesc2,Archer Character
 CharacterDesc3,Mage Character
 CharacterDesc4,Thief Character
 CharacterDesc5,Character Desc 5
+Weapon,Weapon
+Equip,Equip
+Consumable,Consumable
+NAME,Name
+DESC,Description
+TYPE,Type
+VALUE,Value
+COST,Cost
+SAVE,Save
+LOAD,Load
+LEVEL,Level
+HP,Hp
+ATK,Atk
+DEF,Def
+ADDITEM,Add Item
+REMOVEITEM,Remove Item
+ADDCHARACTER,Add Character
+REMOVECHRACTER,Remove Character
+REMOVE_EQUIP,Remove Equip
+CANCEL,Cancel
+SORT_DATEASC,Date(Ascending)
+SORT_DATEDES,Date(Descending)
+SORT_NAMEASC,Name(Ascending)
+SORT_NAMEDES,Name(Descending)
+SORT_COSTASC,Cost(Ascending)
+SORT_COSTDES,Cost(Descending)
+SORT_LEVELASC,Level(Ascending)
+SORT_LEVELDES,Level(Descending)
+FILTER_NONE,None
+FILTER_WEAPON,Weapon
+FILTER_EQUIP,Equip
+FILTER_CONSUMABLE,Consumable
+FILTER_NOTCOSUMABLE,Not Consumable
+FILTER_LEVEL1,Level1
+FILTER_LEVEL2,Level2
+FILTER_LEVEL3,Level3
+FILTER_LEVEL4,Level4
+FILTER_LEVEL5,Level5

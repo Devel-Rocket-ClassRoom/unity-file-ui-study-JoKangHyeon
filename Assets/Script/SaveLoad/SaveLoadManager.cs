@@ -1,8 +1,9 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
-using SaveDataVC = SaveDataV3;
+using SaveDataVC = SaveDataV6;
 
 public static class SaveLoadManager
 {
@@ -12,9 +13,9 @@ public static class SaveLoadManager
         Encrypted
     }
 
-    public static SaveMode Mode { get; set; } = SaveMode.Encrypted;
+    public static SaveMode Mode { get; set; } = SaveMode.Text;
 
-    public static int SaveDataVersion { get; } = 3;
+    public static int SaveDataVersion { get; } = 6;
     public static readonly string SaveDirectory = Path.Combine($"{Application.persistentDataPath}", "Save");
 
     private static readonly string[] TextSaveFileNames =
@@ -83,9 +84,10 @@ public static class SaveLoadManager
 
             return true;
         }
-        catch
+        catch(Exception ex) 
         {
             Debug.LogError("SAVE 예외");
+            Debug.LogException(ex);
             return false;
         }
     }
@@ -109,11 +111,12 @@ public static class SaveLoadManager
         }
         if (!File.Exists(path))
         {
-            return false;
+            return Save();
         }
 
         try
         {
+            Debug.Log(path);
             string json = string.Empty;
             switch (Mode)
             {
@@ -144,5 +147,13 @@ public static class SaveLoadManager
             return false;
         }
 
+    }
+
+    static SaveLoadManager()
+    {
+        if (!Load(0))
+        {
+            Debug.LogError("세이브 데이터 로드 실패");
+        }
     }
 }

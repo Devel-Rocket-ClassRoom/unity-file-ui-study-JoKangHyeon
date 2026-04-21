@@ -21,3 +21,41 @@ CharacterDesc2,궁수입니다.
 CharacterDesc3,마법사입니다.
 CharacterDesc4,도적입니다.
 CharacterDesc5,캐릭터설명5
+Weapon,무기
+Equip,방어구
+Consumable,소모품
+NAME,이름
+DESC,설명
+TYPE,타입
+VALUE,가치
+COST,가격
+LEVEL,레벨
+HP,체력
+ATK,공격력
+DEF,방어력
+SAVE,저장
+LOAD,불러오기
+ADDITEM,아이템 추가
+REMOVEITEM,아이템 삭제
+ADDCHARACTER,캐릭터 추가
+REMOVECHRACTER,캐릭터 삭제
+REMOVE_EQUIP,장비해제
+CANCEL,취소
+SORT_DATEASC,날짜(오름차순)
+SORT_DATEDES,날짜(내림차순)
+SORT_NAMEASC,이름(오름차순)
+SORT_NAMEDES,이름(내림차순)
+SORT_COSTASC,코스트(오름차순)
+SORT_COSTDES,코스트(내림차순)
+SORT_LEVELASC,레벨(오름차순)
+SORT_LEVELDES,레벨(내림차순)
+FILTER_NONE,없음
+FILTER_WEAPON,무기
+FILTER_EQUIP,장비
+FILTER_CONSUMABLE,소모품
+FILTER_NOTCOSUMABLE,소모품 제외
+FILTER_LEVEL1,레벨1
+FILTER_LEVEL2,레벨2
+FILTER_LEVEL3,레벨3
+FILTER_LEVEL4,레벨4
+FILTER_LEVEL5,레벨5

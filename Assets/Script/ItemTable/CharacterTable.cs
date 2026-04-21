@@ -23,7 +23,7 @@ public class CharacterData : ViewableData
 
 public class CharacterTable : DataTable
 {
-    Dictionary<string, CharacterData> table = new();
+    public Dictionary<string, CharacterData> table = new();
 
     public override void Load(string fileName)
     {

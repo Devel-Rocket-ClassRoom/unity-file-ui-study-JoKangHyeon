@@ -21,3 +21,41 @@ CharacterDesc2,C2だ
 CharacterDesc3,C3だ
 CharacterDesc4,C4だ
 CharacterDesc5,C5だ
+Weapon,무기だ
+Equip,방어구だ
+Consumable,소모품だ
+NAME,Nameだ
+DESC,Descriptionだ
+TYPE,Typeだ
+VALUE,Valueだ
+COST,Costだ
+LEVEL,Levelだ
+HP,Hpだ
+ATK,Atkだ
+DEF,Defだ
+SAVE,Saveだ
+LOAD,Loadだ
+ADDITEM,Add Itemだ
+REMOVEITEM,Remove Itemだ
+ADDCHARACTER,Add Characterだ
+REMOVECHRACTER,Remove Characterだ
+REMOVE_EQUIP,Remove Equipだ
+CANCEL,Cancelだ
+SORT_DATEASC,Date(Ascending)だ
+SORT_DATEDES,Date(Descending)だ
+SORT_NAMEASC,Name(Ascending)だ
+SORT_NAMEDES,Name(Descending)だ
+SORT_COSTASC,Cost(Ascending)だ
+SORT_COSTDES,Cost(Descending)だ
+SORT_LEVELASC,Level(Ascending)だ
+SORT_LEVELDES,Level(Descending)だ
+FILTER_NONE,Noneだ
+FILTER_WEAPON,Weaponだ
+FILTER_EQUIP,Equipだ
+FILTER_CONSUMABLE,Consumableだ
+FILTER_NOTCOSUMABLE,Not Consumableだ
+FILTER_LEVEL1,Level1だ
+FILTER_LEVEL2,Level2だ
+FILTER_LEVEL3,Level3だ
+FILTER_LEVEL4,Level4だ
+FILTER_LEVEL5,Level5だ
